@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>To Do List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="task-not-found-container" *ngIf="tasks.length === 0">
+    <span class="task-not-found"> Crie sua primeira tarefa </span>
+  </div>
+
+  <div class="card" *ngFor="let task of tasks">
+    <img src="../assets/image/task.png" alt="task-icon" />
+    <span class="card-title" [innerText]="task.name"></span>
+    <div class="action-button">
+      <ion-icon name="trash-outline" color="danger"></ion-icon>
+      <ion-icon name="create-outline" color="success"></ion-icon>
+    </div>
+  </div>
+
+  <div class="insert-text-container">
+    <input type="text" name="task" id="task" placeholder="Insira sua tarefa aqui"/>
+    <button>Inserir</button>
+  </div>
+</ion-content>
